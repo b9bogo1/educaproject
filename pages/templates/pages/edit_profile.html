@@ -1,0 +1,48 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+{% if messages %}
+{% for m in messages %}
+<div class="col-md-6 offset-md-3 alert alert-success alert-dismissible fade show" role="alert">
+    {{ m }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+<br>
+<h2 class="text-center">Edit user profile</h2>
+<br>
+<div class="col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-light rounded">
+    <form method="POST" action="{% url 'edit_profile' %}">
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Your form has errors...</p>
+            <small>
+                {% for field in form %}
+                {% if field.errors %}
+                {{ field.errors }}
+                {% endif %}
+                {% endfor %}
+            </small>
+        </div>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <div class="col text-center">
+            <input type="submit" value="Edit profile" class="btn btn-outline-danger pl-5 pr-5">
+        </div>
+        <br>
+        <p class="col text-center"><small><a href="{% url 'change_password' %}">Click here</a> to change your password</small></p>
+    </form>
+</div>
+
+
+{% endblock %}

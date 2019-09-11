@@ -4,4 +4,15 @@
 
 Home!
 
+{% if messages %}
+{% for m in messages %}
+<div class="col-md-6 offset-md-3 alert alert-success alert-dismissible fade show" role="alert">
+        {{ m }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+
 {% endblock %}
