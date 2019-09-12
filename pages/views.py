@@ -27,7 +27,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, ('You have been Looged Out.'))
-    return render(request, 'pages/login.html', {})
+    return render(request, 'pages/logout.html', {})
 
 def register_user(request):
     if request.method == 'POST':

@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'camole_logo_t_s.png' %}" height=50 width=50 class="d-inline-block alighn-top">
+                <img src="{% static 'logo_t_s.png' %}" height=50 class="d-inline-block alighn-top">
                 CAMOLE
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -43,6 +43,7 @@
                 </div>
                 {% else %}
                 <div class="navbar-nav ml-auto">
+                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                 </div>
                 {% endif %}
             </div>
