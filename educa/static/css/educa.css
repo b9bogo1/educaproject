@@ -1,0 +1,14 @@
+.educa-row {
+    position: relative;
+}
+
+.educa-bottom-align-text {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+  }
+
+  .educa-top-align-text {
+    position: absolute;
+    top: 0;
+  }
