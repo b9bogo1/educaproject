@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Create an account{% endblock %}{% block content %}
+<h1>Create an account</h1>
+{% if user_form.errors %}
+<div class="text-danger col-md-4 offset-md-4">
+<p>There is an error in the form. Please chek the issue and try again.</p>
+</div>
+{% else %}
+<div class="col-md-4 offset-md-4">
+    <p>Please, sign up using the following form:</p>
+</div>
+{% endif %}
+<div class="col-md-4 offset-md-4 shadow-lg p-3 mb-5 bg-light rounded">
+    <br>
+    <form action="." method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <br>
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-danger pl-5 pr-5">Create my account</button>
+        </div>
+        <br>
+    </form>
+</div>
+{% endblock %}

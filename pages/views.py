@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib import messages
 from .forms import SignUpForm, EditProfileForm, UserPasswordChange
 
+
 def home(request):
     return render(request, 'pages/home.html', {})
 
